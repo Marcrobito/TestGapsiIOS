@@ -36,7 +36,6 @@ class Model: PresenterToModelProtocol {
                     let result = try JSONDecoder().decode(StoreResponse.self, from: response.data!)
                     self.presenter?.fetchedProduct(products: result.items!)
                 }catch{
-                    print("Error deserializing JSON: \(error)")
                     self.presenter?.errorFetchingProducts(error: error.localizedDescription)
                 }
             case .failure(let error):

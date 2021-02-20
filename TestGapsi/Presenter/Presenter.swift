@@ -26,7 +26,6 @@ extension Presenter: ModelToPresenterProtocol{
     
     func fetchedProduct(products: [Product]) {
         if products.count > 0 {
-            print(products)
             self.delegate?.render(products: products)
         }else{
             self.delegate?.render(errorMessage: "No se encontraron productos")
